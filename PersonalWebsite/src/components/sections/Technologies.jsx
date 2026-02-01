@@ -1,10 +1,10 @@
-import reactLogo from '../../assets/react.svg';
-import pythonLogo from '../../assets/python.png';
-import javaLogo from '../../assets/java.png';
-import swiftLogo from '../../assets/swift.png';
-import pytorchLogo from '../../assets/pytorch.jpeg';
-import fastapiLogo from '../../assets/fastapi.jpg';
-import dockerLogo from '../../assets/docker.png';
+import reactLogo from '../../assets/technologies/react.svg';
+import pythonLogo from '../../assets/technologies/python.png';
+import javaLogo from '../../assets/technologies/java.jpg';
+import swiftLogo from '../../assets/technologies/swift.png';
+import pytorchLogo from '../../assets/technologies/pytorch.png';
+import fastapiLogo from '../../assets/technologies/fastapi.jpg';
+import dockerLogo from '../../assets/technologies/docker.svg';
 
 const Technologies = () => {
   const technologies = [
@@ -57,11 +57,12 @@ const Technologies = () => {
             key={tech.name}
             className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            <div className="mb-3 w-16 h-16 flex items-center justify-center">
+            <div className="mb-3 w-16 h-16 flex items-center justify-center bg-white">
               <img 
                 src={tech.logo} 
                 alt={`${tech.name} Logo`}
                 className="w-full h-full object-contain"
+                style={{ backgroundColor: 'transparent' }}
               />
             </div>
             <p className="text-sm font-medium text-gray-700 text-center">

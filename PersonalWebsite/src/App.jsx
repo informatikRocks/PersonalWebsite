@@ -1,4 +1,6 @@
 import Technologies from './components/sections/Technologies'
+import Projects from './components/sections/Projects'
+import Contact from './components/sections/Contact'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       </header>
 
       <Technologies />
+      <Projects />
+      <Contact />
     </div>
   )
 }
