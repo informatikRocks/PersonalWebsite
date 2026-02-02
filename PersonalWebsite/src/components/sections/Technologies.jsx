@@ -5,6 +5,10 @@ import swiftLogo from '../../assets/technologies/swift.png';
 import pytorchLogo from '../../assets/technologies/pytorch.png';
 import fastapiLogo from '../../assets/technologies/fastapi.jpg';
 import dockerLogo from '../../assets/technologies/docker.png';
+import tailwind from  '../../assets/technologies/tailwind.png';
+import spring from '../../assets/technologies/spring.png';
+import gitlogo from '../../assets/technologies/git.png';
+import langchain from '../../assets/technologies/langchain.png';
 
 const Technologies = () => {
   const technologies = [
@@ -42,6 +46,26 @@ const Technologies = () => {
       name: 'FastAPI',
       logo: fastapiLogo,
       color: 'from-teal-500 to-green-500'
+    },
+     {
+      name: 'Tailwind CSS',
+      logo: tailwind,
+      color: 'from-blue-400 to-cyan-400'
+    },
+    {
+      name: 'Spring Boot',
+      logo: spring,
+      color: 'from-green-600 to-green-800'
+    },
+    {
+      name: 'Git',
+      logo: gitlogo,
+      color: 'from-red-500 to-red-700'
+    },
+    {
+      name: 'LangChain',
+      logo: langchain,
+      color: 'from-purple-500 to-indigo-700'
     }
   ];
 

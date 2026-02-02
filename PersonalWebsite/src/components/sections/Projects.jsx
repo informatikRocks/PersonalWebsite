@@ -9,7 +9,7 @@ const Projects = () => {
       color: 'from-blue-500 to-purple-600'
     },
     {
-      title: 'AI Chat Bot',
+      title: 'Intent Based AI Chatbot',
       description: 'Intelligenter Chatbot mit Natural Language Processing. Nutzt PyTorch für Machine Learning und FastAPI als Backend.',
       technologies: ['Python', 'PyTorch', 'FastAPI', 'React'],
       github: 'https://github.com/username/ai-chatbot',
