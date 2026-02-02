@@ -4,7 +4,7 @@ import javaLogo from '../../assets/technologies/java.jpg';
 import swiftLogo from '../../assets/technologies/swift.png';
 import pytorchLogo from '../../assets/technologies/pytorch.png';
 import fastapiLogo from '../../assets/technologies/fastapi.jpg';
-import dockerLogo from '../../assets/technologies/docker.svg';
+import dockerLogo from '../../assets/technologies/docker.png';
 
 const Technologies = () => {
   const technologies = [
