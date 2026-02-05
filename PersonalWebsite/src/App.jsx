@@ -13,8 +13,8 @@ function App() {
         <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
           Hallo, ich bin <span className="text-red-400">Simon</span>.
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-gray-300">
-          Ich bin ein leidenschaftlicher Softwareentwickler mit Fokus auf Backend und heiße dich herzlich auf meiner Website willkommen.
+        <p className="mt-4 max-w-3xl text-lg text-gray-300">
+         Ich bin ein Wirtschaftsinformatik-Student, der sich für Mathematik und Informatik begeistert. Ich liebe es, innovative Software und mathematische Konzepte zu entwickeln.
         </p>
       </header>
 

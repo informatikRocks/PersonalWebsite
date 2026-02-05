@@ -1,47 +1,116 @@
+import { useState } from 'react';
+import ProjectModal from '../ProjectModal';
+
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  
+  // Standardmäßig 4 Projekte anzeigen
+  const initialProjectCount = 4;
+  const [visibleProjects, setVisibleProjects] = useState(initialProjectCount);
+
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Eine vollständige E-Commerce-Plattform mit React, Node.js und MongoDB. Features: Produktkatalog, Warenkorb, Zahlungsintegration.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'Personal iOS Macos Personal Assistant coined by J.A.R.V.I.S.',
+      description: 'Ein persönlicher KI-Assistent für iOS und macOS, inspiriert von J.A.R.V.I.S. aus Iron Man, der die besondere Fusion Graph technology umsetzt',
+      extendedDescription: 'Diese E-Commerce-Plattform bietet eine komplette Lösung für Online-Shops mit modernem Design, responsivem Layout und optimierter Performance. Die Integration von Stripe ermöglicht sichere Zahlungsabwicklung.',
+      technologies: ["Python", "Swift", "Kubernetes", "Docker", "ChromaDB"],
       github: 'https://github.com/username/ecommerce',
       demo: 'https://demo-ecommerce.com',
-      color: 'from-blue-500 to-purple-600'
+      image: '/images/projects/ecommerce.jpg',
+      color: 'from-blue-500 to-purple-600',
+      features: [
+        'Produktkatalog mit Filteroptionen',
+        'Warenkorb-Funktionalität',
+        'Stripe Zahlungsintegration',
+        'Admin Dashboard'
+      ]
     },
     {
-      title: 'Intent Based AI Chatbot',
-      description: 'Intelligenter Chatbot mit Natural Language Processing. Nutzt PyTorch für Machine Learning und FastAPI als Backend.',
-      technologies: ['Python', 'PyTorch', 'FastAPI', 'React'],
-      github: 'https://github.com/username/ai-chatbot',
-      color: 'from-green-500 to-teal-600'
+      title: 'Neural-Network Portfolio Assistant',
+      description: 'Ein intelligenter KI-Assistent, der Deep Learning nutzt, um Nutzeranfragen zu verstehen. Er kombiniert ein maßgeschneidertes PyTorch-Modell mit einem dynamischen JSON-Profilsystem.',
+      extendedDescription: 'Dieser Chatbot nutzt ein "Feed-Forward Neural Network" mit drei Layern, um Absichten (Intents) in natürlicher Sprache zu klassifizieren. Statt auf statische Antworten zu setzen, entkoppelt das System NLP-Logik von Fakten: Die Antworten werden zur Laufzeit dynamisch aus einem JSON-Profil generiert. Das gesamte Backend wurde mit "uv" für maximale Performance entwickelt und vollständig dockerisiert.',
+      technologies: ['Python', 'PyTorch', 'FastAPI', 'NLTK', 'Docker', 'uv', "React", "Tailwind CSS"],
+      github: 'https://github.com/informatikRocks/IntentChatBot',
+      image: '/images/projects/chatbot-architecture.jpg',
+      color: 'from-blue-600 to-indigo-700',
+      features: [
+        'Custom NLP Pipeline (Tokenisierung & Stemming)',
+        'Deep Learning Intent-Klassifizierung',
+        'Dynamisches Data-Response Mapping',
+        'Production-ready Docker Deployment',
+        'RESTful API Design'
+      ]
     },
     {
-      title: 'Task Management App',
+      title: 'Sushi Pizza and Steak Identifier',
       description: 'Mobile-First Task Manager mit Drag & Drop, Kategorien und Erinnerungen. Entwickelt mit Swift für iOS.',
-      technologies: ['Swift', 'SwiftUI', 'CoreData'],
+      extendedDescription: 'Eine native iOS-App für effizientes Task-Management mit intuitiver Bedienung und lokalem Daten-Caching. Optimiert für iPhone und iPad.',
+      technologies: ["Python", "Pytorch", "FastAPI", "React", "Tailwind CSS"],
       github: 'https://github.com/username/task-manager',
-      color: 'from-orange-500 to-red-600'
+      image: '/images/projects/task-manager.jpg',
+      color: 'from-orange-500 to-red-600',
+      features: [
+        'Drag & Drop Interface',
+        'Kategorien und Tags',
+        'Push-Benachrichtigungen',
+        'Offline-First mit CoreData'
+      ]
     },
     {
       title: 'Docker DevOps Pipeline',
       description: 'Automatisierte CI/CD Pipeline mit Docker und Kubernetes. Deployment auf AWS mit automatischen Tests.',
+      extendedDescription: 'Eine vollständig automatisierte DevOps-Lösung für schnelle und sichere Deployments. Integriert automatische Tests, Code-Qualitätsprüfungen und Container-Orchestrierung.',
       technologies: ['Docker', 'Kubernetes', 'AWS', 'Jenkins'],
       github: 'https://github.com/username/devops-pipeline',
-      color: 'from-cyan-500 to-blue-600'
+      image: '/images/projects/devops-pipeline.jpg',
+      color: 'from-cyan-500 to-blue-600',
+      features: [
+        'Automatisierte CI/CD Pipeline',
+        'Container Orchestrierung',
+        'AWS Cloud Deployment',
+        'Automated Testing & Quality Gates'
+      ]
+    },
+    // --- ZUSÄTZLICHES PROJEKT FÜR DEN TEST (Damit Button erscheint) ---
+    {
+      title: 'Erweiterter Projekt-Test',
+      description: 'Ein zusätzliches Projekt, um die Mehr-Anzeigen-Funktion zu testen.',
+      extendedDescription: 'Nur ein Platzhalter, damit mehr als 4 Elemente vorhanden sind.',
+      technologies: ['React', 'Test'],
+      github: '#',
+      image: '/images/projects/placeholder.jpg',
+      color: 'from-green-500 to-emerald-600',
+      features: ['Button Test', 'Responsive Layout']
     }
   ];
 
+  // Funktion: Mehr anzeigen (zeigt 4 weitere an)
+  const showMoreProjects = () => {
+    setVisibleProjects((prevValue) => prevValue + 4);
+  };
+
+  // Funktion: Weniger anzeigen (zurücksetzen auf 4 und hochscrollen)
+  const showLessProjects = () => {
+    setVisibleProjects(initialProjectCount);
+    const section = document.getElementById('projects-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section id="projects-section" className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="text-3xl font-bold text-center mb-12 text-white">
         Projekte
       </h2>
       
+      {/* Grid zeigt nur die Anzahl an, die in visibleProjects definiert ist */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
+        {projects.slice(0, visibleProjects).map((project, index) => (
           <div
             key={index}
-            className="group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            onClick={() => setSelectedProject(project)}
+            className="group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
             
@@ -96,6 +165,37 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      {/* --- BUTTON STEUERUNG --- */}
+      <div className="flex justify-center gap-4 mt-12">
+        {/* Mehr anzeigen: Nur wenn es noch versteckte Projekte gibt */}
+        {visibleProjects < projects.length && (
+          <button
+            onClick={showMoreProjects}
+            className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-full transition-colors duration-300 shadow-lg border border-gray-700"
+          >
+            Mehr anzeigen
+          </button>
+        )}
+
+        {/* Weniger anzeigen: Nur wenn wir mehr als 4 sehen */}
+        {visibleProjects > initialProjectCount && (
+          <button
+            onClick={showLessProjects}
+            className="px-8 py-3 bg-transparent hover:bg-gray-800 text-gray-300 hover:text-white font-semibold rounded-full transition-colors duration-300 border border-gray-600"
+          >
+            Weniger anzeigen
+          </button>
+        )}
+      </div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+        />
+      )}
     </section>
   );
 };
