@@ -4,25 +4,25 @@ import tumLogo from "../../assets/Personal/tum.png";
 const Personal = () => {
   const experiences = [
     {
-      company: "Tech Startup GmbH",
-      role: "Full-Stack Developer Praktikant",
+      company: "DR. JOHANNES HEIDENHAIN GmbH",
+      role: "AI Engineer",
       period: "Jul 2025 - Sep 2025",
       description: "Entwicklung einer React-basierten Web-App mit FastAPI Backend. Implementierung von RESTful APIs und PostgreSQL-Datenbankintegration.",
       technologies: ["React", "Python", "FastAPI", "PostgreSQL"]
     },
     {
-      company: "Digital Solutions AG",
-      role: "Data Science Praktikant",
+      company: "DR. JOHANNES HEIDENHAIN GmbH",
+      role: "Business Intelligence Praktikant",
       period: "Feb 2025 - Apr 2025",
-      description: "Datenanalyse und Machine Learning Modelle mit PyTorch. Automatisierung von Datenverarbeitungsprozessen mit Python.",
-      technologies: ["Python", "PyTorch", "Pandas", "Docker"]
+      description: "Während meines Praktikums in der BI-Abteilung habe ich intensiv mit Microsoft SQL Server gearbeitet, um Daten zu analysieren und auszuwerten. Ich habe selbstständig Abfragen erstellt, Daten aufbereitet und Auswertungen für verschiedene Geschäftsprozesse durchgeführt. Darüber hinaus habe ich einen Prozess zur Automatisierung der Bereitstellung in Jenkins entwickelt. Dieses Skript erkennt Änderungen in einem Repository und überträgt die geänderten Dateien automatisch auf den entsprechenden Server. Dadurch konnte ich Prozesse effizienter gestalten und die Datenbereitstellung für das Team optimieren.",
+      technologies: ["Python", "Microsoft SQL Server", "Jenkins"]
     },
     {
-      company: "Innovation Labs",
-      role: "Software Engineering Praktikant",
+      company: "DR. JOHANNES HEIDENHAIN GmbH",
+      role: "Enterprise Architecture Management Praktikant",
       period: "Aug 2024 - Okt 2024",
-      description: "Mitarbeit an Cloud-nativen Anwendungen. CI/CD Pipeline Optimierung und Kubernetes Deployment.",
-      technologies: ["Kubernetes", "Docker", "AWS", "Jenkins"]
+      description: "Während meines Praktikums habe ich die aktuelle Darstellung der tatsächlichen und angestrebten Entwicklungen im EAM-Tool analysiert. Zunächst habe ich die bestehende Verwendung von Fähigkeiten sowohl als Entitäten als auch als Attribute identifiziert. Darauf aufbauend habe ich eine neue Darstellung entworfen, die die Fähigkeitsentität und intelligentes Business Mapping nutzt, um beide Entwicklungen genau abzubilden. Schließlich entwickelte ich ein detailliertes Migrationskonzept, das die Übertragung bestehender Daten in das neue Modell beschreibt und dabei die Notwendigkeit berücksichtigt, die Datenintegrität und -konsistenz während der Migration sicherzustellen. Die praktische Umsetzung und Lösung der Aufgabe erfolgte durch die Entwicklung von Python-Skripten, die zum Erstellen und Ändern von Excel-Tabellen verwendet wurden.",
+      technologies: ["Python", "LUY"]
     }
   ];
 
