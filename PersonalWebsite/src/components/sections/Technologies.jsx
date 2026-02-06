@@ -9,6 +9,7 @@ import tailwind from  '../../assets/technologies/tailwind.png';
 import spring from '../../assets/technologies/spring.png';
 import gitlogo from '../../assets/technologies/git.png';
 import langchain from '../../assets/technologies/langchain.png';
+import sqlLogo from '../../assets/technologies/sql.jpg';
 
 const Technologies = () => {
   const technologies = [
@@ -66,6 +67,11 @@ const Technologies = () => {
       name: 'LangChain',
       logo: langchain,
       color: 'from-purple-500 to-indigo-700'
+    },
+    {
+      name: 'SQL',
+      logo: sqlLogo,
+      color: 'from-gray-500 to-gray-700'
     }
   ];
 

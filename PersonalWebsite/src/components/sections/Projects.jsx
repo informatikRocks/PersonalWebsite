@@ -7,6 +7,7 @@ const Projects = () => {
   // Standardmäßig 4 Projekte anzeigen
   const initialProjectCount = 4;
   const [visibleProjects, setVisibleProjects] = useState(initialProjectCount);
+  const [animatingProjects, setAnimatingProjects] = useState(new Set());
 
   const projects = [
     {
@@ -86,12 +87,29 @@ const Projects = () => {
 
   // Funktion: Mehr anzeigen (zeigt 4 weitere an)
   const showMoreProjects = () => {
-    setVisibleProjects((prevValue) => prevValue + 4);
+    const currentVisible = visibleProjects;
+    const newVisible = currentVisible + 4;
+    
+    // Markiere die neuen Projekte für Animation
+    const newAnimatingProjects = new Set();
+    for (let i = currentVisible; i < Math.min(newVisible, projects.length); i++) {
+      newAnimatingProjects.add(i);
+    }
+    setAnimatingProjects(newAnimatingProjects);
+    
+    // Update sichtbare Projekte
+    setVisibleProjects(newVisible);
+    
+    // Entferne Animation-State nach Abschluss
+    setTimeout(() => {
+      setAnimatingProjects(new Set());
+    }, 600);
   };
 
   // Funktion: Weniger anzeigen (zurücksetzen auf 4 und hochscrollen)
   const showLessProjects = () => {
     setVisibleProjects(initialProjectCount);
+    setAnimatingProjects(new Set());
     const section = document.getElementById('projects-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -110,7 +128,12 @@ const Projects = () => {
           <div
             key={index}
             onClick={() => setSelectedProject(project)}
-            className="group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className={`group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer ${
+              animatingProjects.has(index) ? 'animate-fade-in-up' : ''
+            }`}
+            style={animatingProjects.has(index) ? { 
+              animationDelay: `${(index % 4) * 100}ms` 
+            } : {}}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
             
