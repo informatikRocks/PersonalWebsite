@@ -6,22 +6,22 @@ const Personal = () => {
     {
       company: "DR. JOHANNES HEIDENHAIN GmbH",
       role: "AI Engineer",
-      period: "Jul 2025 - Sep 2025",
-      description: "Entwicklung einer React-basierten Web-App mit FastAPI Backend. Implementierung von RESTful APIs und PostgreSQL-Datenbankintegration.",
-      technologies: ["React", "Python", "FastAPI", "PostgreSQL"]
+      period: "Mar 2025 - Apr 2025",
+      description: "Details to follow.", // Oder: "Upcoming role focused on Artificial Intelligence."
+      technologies: ["TBD"] // TBD = To Be Determined
     },
     {
       company: "DR. JOHANNES HEIDENHAIN GmbH",
-      role: "Business Intelligence Praktikant",
-      period: "Feb 2025 - Apr 2025",
-      description: "Während meines Praktikums in der BI-Abteilung habe ich intensiv mit Microsoft SQL Server gearbeitet, um Daten zu analysieren und auszuwerten. Ich habe selbstständig Abfragen erstellt, Daten aufbereitet und Auswertungen für verschiedene Geschäftsprozesse durchgeführt. Darüber hinaus habe ich einen Prozess zur Automatisierung der Bereitstellung in Jenkins entwickelt. Dieses Skript erkennt Änderungen in einem Repository und überträgt die geänderten Dateien automatisch auf den entsprechenden Server. Dadurch konnte ich Prozesse effizienter gestalten und die Datenbereitstellung für das Team optimieren.",
+      role: "Business Intelligence Intern",
+      period: "Sep 2025 - Oct 2025",
+      description: "During my internship in the BI department, I worked intensively with Microsoft SQL Server to analyze and evaluate data. I independently created queries, processed data, and performed evaluations for various business processes. Furthermore, I developed a deployment automation process using Jenkins. This script detects changes in a repository and automatically transfers the modified files to the corresponding server, streamlining processes and optimizing data delivery for the team.",
       technologies: ["Python", "Microsoft SQL Server", "Jenkins"]
     },
     {
       company: "DR. JOHANNES HEIDENHAIN GmbH",
-      role: "Enterprise Architecture Management Praktikant",
-      period: "Aug 2024 - Okt 2024",
-      description: "Während meines Praktikums habe ich die aktuelle Darstellung der tatsächlichen und angestrebten Entwicklungen im EAM-Tool analysiert. Zunächst habe ich die bestehende Verwendung von Fähigkeiten sowohl als Entitäten als auch als Attribute identifiziert. Darauf aufbauend habe ich eine neue Darstellung entworfen, die die Fähigkeitsentität und intelligentes Business Mapping nutzt, um beide Entwicklungen genau abzubilden. Schließlich entwickelte ich ein detailliertes Migrationskonzept, das die Übertragung bestehender Daten in das neue Modell beschreibt und dabei die Notwendigkeit berücksichtigt, die Datenintegrität und -konsistenz während der Migration sicherzustellen. Die praktische Umsetzung und Lösung der Aufgabe erfolgte durch die Entwicklung von Python-Skripten, die zum Erstellen und Ändern von Excel-Tabellen verwendet wurden.",
+      role: "Enterprise Architecture Management Intern",
+      period: "Mar 2025 - Apr 2025",
+      description: "During this internship, I analyzed the current visualization of actual and target developments within the EAM tool. I identified the existing usage of capabilities as both entities and attributes. Based on this, I designed a new visualization utilizing the capability entity and intelligent business mapping to accurately represent both developments. Finally, I developed a detailed migration concept outlining the transfer of existing data to the new model, ensuring data integrity and consistency. The practical implementation was achieved by developing Python scripts to create and modify Excel spreadsheets.",
       technologies: ["Python", "LUY"]
     }
   ];
@@ -29,7 +29,7 @@ const Personal = () => {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="text-3xl font-bold text-center mb-12 text-white">
-        Über mich
+        About Me
       </h2>
 
       {/* Studium Section */}
@@ -45,13 +45,13 @@ const Personal = () => {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h3 className="text-2xl font-bold text-white mb-2">
-                Wirtschaftsinformatik (B.Sc.)
+                Information Systems (B.Sc.)
               </h3>
               <p className="text-lg text-blue-300 mb-2">
-                Technische Universität München
+                Technical University of Munich
               </p>
               <p className="text-gray-300">
-                3. Semester • Schwerpunkt: Software Engineering & Data Science
+                3rd Semester • Focus: Software Engineering & Data Science
               </p>
             </div>
           </div>
@@ -60,18 +60,18 @@ const Personal = () => {
 
       <div className="max-w-3xl mx-auto text-center mb-12">
         <p className="text-lg text-gray-300 mb-6">
-          Hallo! Ich bin Simon, ein Wirtschaftsinformatik-Student an der TUM mit einer Leidenschaft für moderne Softwareentwicklung und innovative Technologien.
+          Hi! I'm Simon, an Information Systems student at TUM with a passion for modern software development and innovative technologies.
         </p>
 
         <p className="text-lg text-gray-300 mb-10">
-          Wenn ich nicht gerade code, suche ich den Ausgleich in Bewegung, Büchern und neuen Orten. Ich mag Projekte, die Neugier wecken und Routinen durchbrechen.
+          When I'm not coding, I find balance in movement, books, and new places. I love projects that spark curiosity and break routines.
         </p>
       </div>
 
       {/* Praxiserfahrung Timeline */}
       <div className="max-w-5xl mx-auto mb-16">
         <h3 className="text-2xl font-bold text-white mb-10 text-center">
-          Praxiserfahrung
+          Professional Experience
         </h3>
         <div className="relative">
           {/* Vertikaler Strich */}
@@ -134,46 +134,46 @@ const Personal = () => {
         <figure className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-lg">
           <img
             src={marathonImage}
-            alt="Marathon-Finisher-Moment"
+            alt="Marathon Finisher Moment"
             className="w-full h-64 object-contain bg-white"
             loading="lazy"
           />
           <figcaption className="px-6 py-4 text-sm text-gray-300">
-            Mein erster (offizieller) Marathon – Ein persönlicher Meilenstein
+            My first (official) marathon – A personal milestone
           </figcaption>
         </figure>
 
         <div className="space-y-4">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
-            <h3 className="text-xl font-semibold text-white mb-2">Freizeit & Energiequellen</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Hobbies & Passions</h3>
             <p className="text-gray-300">
-              Ausdauer gibt mir Struktur: Ich bin bereits einen Marathon gelaufen und trainiere aktuell für einen Ironman. Für den Kopf liebe ich ruhige Leseabende und fürs Herz das Unterwegssein – neue Städte, neue Perspektiven, neue Ideen.
+              Endurance gives me structure: I have already run a marathon and am currently training for an Ironman. For my mind, I love quiet evenings with a book, and for my soul, being on the move – new cities, new perspectives, new ideas.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm uppercase tracking-wide text-gray-400">Sport</p>
-              <p className="text-white font-medium">Marathon-Finisher</p>
-              <p className="text-gray-300 text-sm">Ziel erreicht, Blick nach vorn.</p>
+              <p className="text-sm uppercase tracking-wide text-gray-400">Sports</p>
+              <p className="text-white font-medium">Marathon Finisher</p>
+              <p className="text-gray-300 text-sm">Goal achieved, eyes forward.</p>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm uppercase tracking-wide text-gray-400">Nächstes Ziel</p>
-              <p className="text-white font-medium">Ironman-Training</p>
-              <p className="text-gray-300 text-sm">Konstanz schlägt Motivation.</p>
+              <p className="text-sm uppercase tracking-wide text-gray-400">Next Goal</p>
+              <p className="text-white font-medium">Ironman Training</p>
+              <p className="text-gray-300 text-sm">Consistency beats motivation.</p>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm uppercase tracking-wide text-gray-400">Lesen</p>
-              <p className="text-white font-medium">Sachbücher & Sci‑Fi</p>
-              <p className="text-gray-300 text-sm">Ideen, die hängen bleiben.</p>
+              <p className="text-sm uppercase tracking-wide text-gray-400">Reading</p>
+              <p className="text-white font-medium">Non-fiction & Sci-Fi</p>
+              <p className="text-gray-300 text-sm">Ideas that stick.</p>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm uppercase tracking-wide text-gray-400">Reisen</p>
-              <p className="text-white font-medium">City‑Trips & Natur</p>
-              <p className="text-gray-300 text-sm">Zwischen Karte und Zufall.</p>
+              <p className="text-sm uppercase tracking-wide text-gray-400">Travel</p>
+              <p className="text-white font-medium">City Trips & Nature</p>
+              <p className="text-gray-300 text-sm">Between maps and spontaneity.</p>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ const Personal = () => {
 
       <div className="max-w-3xl mx-auto text-center mt-12">
         <p className="text-lg text-gray-300">
-          Wenn du mehr über meine Projekte erfahren möchtest oder einfach nur plaudern willst, schau dich gerne auf meiner Website um oder kontaktiere mich!
+          If you want to learn more about my projects or just want to chat, feel free to look around my website or contact me!
         </p>
       </div>
     </section>

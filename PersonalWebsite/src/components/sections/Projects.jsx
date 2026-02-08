@@ -4,109 +4,146 @@ import ProjectModal from '../ProjectModal';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   
-  // Standardmäßig 4 Projekte anzeigen
+  // Show 4 projects by default
   const initialProjectCount = 4;
   const [visibleProjects, setVisibleProjects] = useState(initialProjectCount);
   const [animatingProjects, setAnimatingProjects] = useState(new Set());
 
   const projects = [
     {
-      title: 'Personal iOS Macos Personal Assistant coined by J.A.R.V.I.S.',
-      description: 'Ein persönlicher KI-Assistent für iOS und macOS, inspiriert von J.A.R.V.I.S. aus Iron Man, der die besondere Fusion Graph technology umsetzt',
-      extendedDescription: 'Diese E-Commerce-Plattform bietet eine komplette Lösung für Online-Shops mit modernem Design, responsivem Layout und optimierter Performance. Die Integration von Stripe ermöglicht sichere Zahlungsabwicklung.',
+      title: 'Personal iOS & macOS Assistant (J.A.R.V.I.S. Inspired)',
+      description: 'A personal AI assistant for iOS and macOS, inspired by J.A.R.V.I.S. from Iron Man, implementing unique fusion graph technology.',
+      // NOTE: The German text described an E-Commerce shop here. I translated it, but you might want to write a description about the AI instead.
+      extendedDescription: 'This platform offers a complete solution with modern design, responsive layout, and optimized performance. The integration of Stripe enables secure payment processing.', 
       technologies: ["Python", "Swift", "Kubernetes", "Docker", "ChromaDB"],
       github: 'https://github.com/username/ecommerce',
       demo: 'https://demo-ecommerce.com',
       image: '/images/projects/ecommerce.jpg',
       color: 'from-blue-500 to-purple-600',
       features: [
-        'Produktkatalog mit Filteroptionen',
-        'Warenkorb-Funktionalität',
-        'Stripe Zahlungsintegration',
+        'Product Catalog with Filters', // Adapted to match the description context
+        'Shopping Cart Functionality',
+        'Stripe Payment Integration',
         'Admin Dashboard'
       ]
     },
     {
-      title: 'Neural-Network Portfolio Assistant',
-      description: 'Ein intelligenter KI-Assistent, der Deep Learning nutzt, um Nutzeranfragen zu verstehen. Er kombiniert ein maßgeschneidertes PyTorch-Modell mit einem dynamischen JSON-Profilsystem.',
-      extendedDescription: 'Dieser Chatbot nutzt ein "Feed-Forward Neural Network" mit drei Layern, um Absichten (Intents) in natürlicher Sprache zu klassifizieren. Statt auf statische Antworten zu setzen, entkoppelt das System NLP-Logik von Fakten: Die Antworten werden zur Laufzeit dynamisch aus einem JSON-Profil generiert. Das gesamte Backend wurde mit "uv" für maximale Performance entwickelt und vollständig dockerisiert.',
-      technologies: ['Python', 'PyTorch', 'FastAPI', 'NLTK', 'Docker', 'uv', "React", "Tailwind CSS"],
+      title: 'Empathic AI Assistant',
+      description: 'An AI chatbot with emotional intelligence. It utilizes a multi-model architecture (PyTorch) to not only understand the content of user queries but also analyze sentiment and respond empathically.',
+      extendedDescription: 'This project demonstrates an advanced NLP pipeline developed entirely from scratch in PyTorch. The system orchestrates two parallel neural networks: 1. An Intent Classifier determines the user\'s goal. 2. A Sentiment Analyzer evaluates emotional coloring (Positive/Negative). A central logic layer (Inference Engine) fuses these results to dynamically generate context-sensitive and empathic responses from a JSON profile. The backend is high-performance, built with "uv" and fully deployable via Docker.',
+      technologies: ['Python', 'PyTorch', 'FastAPI', 'NLTK', 'Docker', 'uv', 'React', 'Tailwind CSS'],
       github: 'https://github.com/informatikRocks/IntentChatBot',
       image: '/images/projects/chatbot-architecture.jpg',
-      color: 'from-blue-600 to-indigo-700',
+      color: 'from-purple-600 to-indigo-700',
       features: [
-        'Custom NLP Pipeline (Tokenisierung & Stemming)',
-        'Deep Learning Intent-Klassifizierung',
-        'Dynamisches Data-Response Mapping',
-        'Production-ready Docker Deployment',
-        'RESTful API Design'
+        'Dual-Model Architecture (Intent & Sentiment)',
+        'Custom Feed-Forward Neural Networks',
+        'Context-Aware Response Generation',
+        'High-Performance Backend (uv & FastAPI)',
+        'Full Docker Containerization'
       ]
     },
     {
-      title: 'Sushi Pizza and Steak Identifier',
-      description: 'Mobile-First Task Manager mit Drag & Drop, Kategorien und Erinnerungen. Entwickelt mit Swift für iOS.',
-      extendedDescription: 'Eine native iOS-App für effizientes Task-Management mit intuitiver Bedienung und lokalem Daten-Caching. Optimiert für iPhone und iPad.',
+      title: 'Sushi, Pizza and Steak Identifier', // NOTE: Title implies Food AI, description says Task Manager. Kept description as is.
+      description: 'Mobile-first task manager with drag & drop, categories, and reminders. Developed with Swift for iOS.',
+      extendedDescription: 'A native iOS app for efficient task management with intuitive usability and local data caching. Optimized for iPhone and iPad.',
       technologies: ["Python", "Pytorch", "FastAPI", "React", "Tailwind CSS"],
       github: 'https://github.com/username/task-manager',
       image: '/images/projects/task-manager.jpg',
       color: 'from-orange-500 to-red-600',
       features: [
         'Drag & Drop Interface',
-        'Kategorien und Tags',
-        'Push-Benachrichtigungen',
-        'Offline-First mit CoreData'
+        'Categories and Tags',
+        'Push Notifications',
+        'Offline-First with CoreData'
       ]
     },
     {
-      title: 'Docker DevOps Pipeline',
-      description: 'Automatisierte CI/CD Pipeline mit Docker und Kubernetes. Deployment auf AWS mit automatischen Tests.',
-      extendedDescription: 'Eine vollständig automatisierte DevOps-Lösung für schnelle und sichere Deployments. Integriert automatische Tests, Code-Qualitätsprüfungen und Container-Orchestrierung.',
-      technologies: ['Docker', 'Kubernetes', 'AWS', 'Jenkins'],
-      github: 'https://github.com/username/devops-pipeline',
-      image: '/images/projects/devops-pipeline.jpg',
-      color: 'from-cyan-500 to-blue-600',
+      title: 'Automated Org-Chart Generator',
+      description: 'Python tool for visualizing company structures. Generates editable PowerPoint slides directly from text descriptions.',
+      extendedDescription: 'Development of a Python solution that converts textual hierarchy data into visual organizational charts. A key feature is the custom-engineered XML logic that creates "real" connector arrows in PowerPoint, ensuring connections remain intact when elements are moved.',
+      technologies: ['Python', 'XML', 'PowerPoint API', 'Data Parsing'],
+      github: 'https://github.com/username/company-structure-viz',
+      image: '/images/projects/company-viz.jpg',
+      color: 'from-emerald-500 to-green-600',
       features: [
-        'Automatisierte CI/CD Pipeline',
-        'Container Orchestrierung',
-        'AWS Cloud Deployment',
-        'Automated Testing & Quality Gates'
+        'Text-to-Visual Conversion',
+        'Custom XML Connector Logic',
+        'Automated PowerPoint Export',
+        'Dynamic Structure Visualization'
       ]
     },
-    // --- ZUSÄTZLICHES PROJEKT FÜR DEN TEST (Damit Button erscheint) ---
     {
-      title: 'Erweiterter Projekt-Test',
-      description: 'Ein zusätzliches Projekt, um die Mehr-Anzeigen-Funktion zu testen.',
-      extendedDescription: 'Nur ein Platzhalter, damit mehr als 4 Elemente vorhanden sind.',
-      technologies: ['React', 'Test'],
-      github: '#',
-      image: '/images/projects/placeholder.jpg',
-      color: 'from-green-500 to-emerald-600',
-      features: ['Button Test', 'Responsive Layout']
+      title: 'Web-Based Organ Control',
+      description: 'Hardware-software interface for controlling a self-built organ via Raspberry Pi.',
+      extendedDescription: 'A 6-month practical project: A Raspberry Pi hosts a PHP/Apache interface acting as a bridge. It enables seamless real-time communication between a digital web interface/keyboard and the physical mechanics of the organ.',
+      technologies: ['PHP', 'Apache', 'Raspberry Pi'],
+      github: '', 
+      image: '/images/projects/organ-control.jpg',
+      color: 'from-purple-500 to-indigo-600',
+      features: [
+        'Real-time Hardware Control',
+        'Embedded Webserver',
+        'Physical Signal Processing',
+        'Raspberry Pi Integration'
+      ]
+    },
+    {
+      title: 'IoT Weather Station Server',
+      description: 'Backend development for climate data as part of the MINT Academy Berchtesgaden.',
+      extendedDescription: 'Development of a robust server within a 5-day sprint phase. The software receives and processes sensor data via the MQTT protocol and serves as the interface between hardware sensors and data storage.',
+      technologies: ['Java', 'Eclipse Mosquitto', 'IoT'],
+      github: '',
+      image: '/images/projects/weather-station.jpg',
+      color: 'from-orange-500 to-amber-600',
+      features: [
+        'MQTT Message Broker',
+        'Java Backend Logic',
+        'Rapid Prototyping (5 Days)',
+        'Sensor Data Processing'
+      ]
+    },
+  
+    // --- ADDITIONAL PROJECT FOR TESTING (To make button appear) ---
+    {
+      title: 'Business Resource Manager',
+      description: 'Comprehensive Java application for corporate management, inventory control, and personnel time tracking.',
+      extendedDescription: 'A complete ERP (Enterprise Resource Planning) system developed in Java. The software offers a secure login system for various user roles. The core feature is intelligent inventory management: The system monitors stock in real-time and sends automatic notifications when items run low and need reordering. Additionally, a digital punch-clock system is integrated for employees to record their working hours.',
+      technologies: ['Java'],
+      github: '#', // Don't forget to add your real GitHub link here!
+      image: '/images/projects/java-erp.jpg',
+      color: 'from-blue-600 to-indigo-700',
+      features: [
+        'Secure Login System',
+        'Automatic Stock Warnings',
+        'Time Tracking (Punch Clock)',
+        'Real-Time Inventory Overview'
+      ]
     }
   ];
 
-  // Funktion: Mehr anzeigen (zeigt 4 weitere an)
+  // Function: Show More (reveals 4 more)
   const showMoreProjects = () => {
     const currentVisible = visibleProjects;
     const newVisible = currentVisible + 4;
     
-    // Markiere die neuen Projekte für Animation
+    // Mark new projects for animation
     const newAnimatingProjects = new Set();
     for (let i = currentVisible; i < Math.min(newVisible, projects.length); i++) {
       newAnimatingProjects.add(i);
     }
     setAnimatingProjects(newAnimatingProjects);
     
-    // Update sichtbare Projekte
+    // Update visible projects
     setVisibleProjects(newVisible);
     
-    // Entferne Animation-State nach Abschluss
+    // Remove animation state after completion
     setTimeout(() => {
       setAnimatingProjects(new Set());
     }, 600);
   };
 
-  // Funktion: Weniger anzeigen (zurücksetzen auf 4 und hochscrollen)
+  // Function: Show Less (reset to 4 and scroll up)
   const showLessProjects = () => {
     setVisibleProjects(initialProjectCount);
     setAnimatingProjects(new Set());
@@ -119,10 +156,10 @@ const Projects = () => {
   return (
     <section id="projects-section" className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="text-3xl font-bold text-center mb-12 text-white">
-        Projekte
+        Projects
       </h2>
       
-      {/* Grid zeigt nur die Anzahl an, die in visibleProjects definiert ist */}
+      {/* Grid only shows the number defined in visibleProjects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.slice(0, visibleProjects).map((project, index) => (
           <div
@@ -189,25 +226,25 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* --- BUTTON STEUERUNG --- */}
+      {/* --- BUTTON CONTROL --- */}
       <div className="flex justify-center gap-4 mt-12">
-        {/* Mehr anzeigen: Nur wenn es noch versteckte Projekte gibt */}
+        {/* Show More: Only if there are hidden projects */}
         {visibleProjects < projects.length && (
           <button
             onClick={showMoreProjects}
             className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-full transition-colors duration-300 shadow-lg border border-gray-700"
           >
-            Mehr anzeigen
+            Show More
           </button>
         )}
 
-        {/* Weniger anzeigen: Nur wenn wir mehr als 4 sehen */}
+        {/* Show Less: Only if we are seeing more than 4 */}
         {visibleProjects > initialProjectCount && (
           <button
             onClick={showLessProjects}
             className="px-8 py-3 bg-transparent hover:bg-gray-800 text-gray-300 hover:text-white font-semibold rounded-full transition-colors duration-300 border border-gray-600"
           >
-            Weniger anzeigen
+            Show Less
           </button>
         )}
       </div>
