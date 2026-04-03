@@ -5,10 +5,10 @@ const Personal = () => {
   const experiences = [
     {
       company: "DR. JOHANNES HEIDENHAIN GmbH",
-      role: "AI Engineer",
+      role: "AI Engineer (Intern)",
       period: "Mar 2025 - Apr 2025",
-      description: "Details to follow.", // Oder: "Upcoming role focused on Artificial Intelligence."
-      technologies: ["TBD"] // TBD = To Be Determined
+      description: "Developed an AI chatbot for project documentation capable of processing and answering questions based on various file formats, including PDFs, Word documents, PowerPoints, and images (JPEGs).",
+      technologies: ["Python", "LangGraph", "Docling", "WSL", "Ollama", "Watchdog", "TypeScript"]
     },
     {
       company: "DR. JOHANNES HEIDENHAIN GmbH",
@@ -37,9 +37,9 @@ const Personal = () => {
         <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl border border-blue-500/20 p-8 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-shrink-0">
-              <img 
-                src={tumLogo} 
-                alt="TUM Logo" 
+              <img
+                src={tumLogo}
+                alt="TUM Logo"
                 className="w-24 h-24 object-contain bg-white/10 rounded-xl p-3"
               />
             </div>
@@ -76,10 +76,10 @@ const Personal = () => {
         <div className="relative">
           {/* Vertikaler Strich */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 md:-translate-x-1/2"></div>
-          
+
           {experiences.map((exp, index) => {
             const isLeft = index % 2 === 0;
-            
+
             return (
               <div key={index} className={`relative mb-12 md:grid md:grid-cols-2 md:gap-8 ${isLeft ? '' : 'md:grid-flow-dense'}`}>
                 {/* Mobile & Tablet: Immer links ausgerichtet */}
@@ -91,8 +91,8 @@ const Personal = () => {
                     <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, i) => (
-                        <span 
-                          key={i} 
+                        <span
+                          key={i}
                           className="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/30"
                         >
                           {tech}
@@ -111,8 +111,8 @@ const Personal = () => {
                     <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
                     <div className={`flex flex-wrap gap-2 ${isLeft ? 'justify-end' : 'justify-start'}`}>
                       {exp.technologies.map((tech, i) => (
-                        <span 
-                          key={i} 
+                        <span
+                          key={i}
                           className="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/30"
                         >
                           {tech}
