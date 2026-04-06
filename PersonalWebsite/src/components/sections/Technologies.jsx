@@ -10,6 +10,8 @@ import spring from '../../assets/technologies/spring.png';
 import gitlogo from '../../assets/technologies/git.png';
 import langchain from '../../assets/technologies/langchain.png';
 import sqlLogo from '../../assets/technologies/sql.jpg';
+import claudeLogo from '../../assets/agents/claude.png';
+import antigravityLogo from '../../assets/agents/anti.png';
 
 const Technologies = () => {
   const technologies = [
@@ -100,6 +102,39 @@ const Technologies = () => {
             </p>
           </div>
         ))}
+      </div>
+
+      <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-white">
+        Agentic AI Setup
+      </h3>
+      
+      <div className="flex justify-center gap-8 items-center">
+        <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-64">
+          <div className="mb-3 w-full h-24 flex items-center justify-center bg-white">
+            <img 
+              src={claudeLogo} 
+              alt="Claude Code Logo"
+              className="w-full h-full object-contain"
+              style={{ backgroundColor: 'transparent' }}
+            />
+          </div>
+          <p className="text-sm font-medium text-gray-700 text-center">
+            Claude Code
+          </p>
+        </div>
+        <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-64">
+          <div className="mb-3 w-full h-24 flex items-center justify-center bg-white">
+            <img 
+              src={antigravityLogo} 
+              alt="Antigravity Logo"
+              className="w-full h-full object-contain"
+              style={{ backgroundColor: 'transparent' }}
+            />
+          </div>
+          <p className="text-sm font-medium text-gray-700 text-center">
+            Antigravity
+          </p>
+        </div>
       </div>
     </section>
   );

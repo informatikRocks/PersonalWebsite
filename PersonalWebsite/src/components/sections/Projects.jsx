@@ -10,6 +10,21 @@ const Projects = () => {
   const [animatingProjects, setAnimatingProjects] = useState(new Set());
 
   const projects = [
+
+    {
+      title: 'Claude Code',
+      description: 'Own implementation of a Claude Code CLI tool.',
+      extendedDescription: 'A custom command-line interface tool that gives you a powerful AI assistant in your terminal. Like the original, it helps you understand your codebase, write code, run commands, and accomplish tasks directly from the command line.',
+      technologies: ['Python', 'Langgraph', 'Context Management', 'Chunking', 'Docling', 'Typer'],
+      image: '/images/projects/claude-code.jpg',
+      color: 'from-amber-600 to-orange-700',
+      features: [
+        'Terminal UI',
+        'Codebase Understanding',
+        'Command Execution',
+        'Tool calling Support'
+      ]
+    },
     {
       title: 'Personal iOS & macOS Assistant (J.A.R.V.I.S. Inspired)',
       description: 'A personal AI assistant for iOS and macOS, inspired by J.A.R.V.I.S. from Iron Man, implementing unique fusion graph technology.',
