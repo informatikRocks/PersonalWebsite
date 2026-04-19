@@ -19,8 +19,9 @@ const Projects = () => {
       image: '/images/projects/claude-code.jpg',
       color: 'from-amber-600 to-orange-700',
       features: [
+        'Advanced concepts of context engenineering',
         'Terminal UI',
-        'Codebase Understanding',
+        'Multi agent system',
         'Command Execution',
         'Tool calling Support'
       ]
@@ -30,14 +31,17 @@ const Projects = () => {
       description: 'A personal AI assistant for iOS and macOS, inspired by J.A.R.V.I.S. from Iron Man, implementing unique fusion graph technology.',
       // NOTE: The German text described an E-Commerce shop here. I translated it, but you might want to write a description about the AI instead.
       extendedDescription: 'This platform offers a complete solution with modern design, responsive layout, and optimized performance. The integration of Stripe enables secure payment processing.',
-      technologies: ["Python", "Swift", "Kubernetes", "Docker", "ChromaDB"],
+      technologies: ["Python", "Swift", "Kubernetes", "Docker", "ChromaDB", "Docker"],
       image: '/images/projects/ecommerce.jpg',
       color: 'from-blue-500 to-purple-600',
       features: [
-        'Product Catalog with Filters', // Adapted to match the description context
-        'Shopping Cart Functionality',
-        'Stripe Payment Integration',
-        'Admin Dashboard'
+        'Creating Mails, Calendar Events, Reminders',
+        'Acess to all files on your Mac',
+        'Enabling a faster file or app search than apple Spotlight',
+        'Implementing an Sign in with Apple',
+        'Full end to end encryption',
+        'Fusion Graph technology - Implementing an own datastructure',
+        'Voice Mode'
       ]
     },
     {
@@ -57,18 +61,18 @@ const Projects = () => {
       ]
     },
     {
-      title: 'Sushi, Pizza and Steak Identifier', // NOTE: Title implies Food AI, description says Task Manager. Kept description as is.
-      description: 'Mobile-first task manager with drag & drop, categories, and reminders. Developed with Swift for iOS.',
-      extendedDescription: 'A native iOS app for efficient task management with intuitive usability and local data caching. Optimized for iPhone and iPad.',
-      technologies: ["Python", "Pytorch", "FastAPI", "React", "Tailwind CSS"],
-      github: 'https://github.com/username/task-manager',
-      image: '/images/projects/task-manager.jpg',
+      title: 'Sushi, Pizza and Steak Identifier',
+      description: 'Training a custom neural network for food classification',
+      extendedDescription: 'A custom neural network built and trained entirely from scratch using PyTorch. This project served as a hands-on educational deep dive to master the core concepts of machine learning, covering data preparation, model architecture design, training loops, and evaluation. The model is served via a FastAPI backend and integrated with a React frontend for seamless image uploads and predictions.',
+      technologies: ["Python", "PyTorch", "FastAPI", "React", "Tailwind CSS"],
+      github: 'https://github.com/username/food-identifier-pytorch',
+      image: '/images/projects/food-identifier.jpg',
       color: 'from-orange-500 to-red-600',
       features: [
-        'Drag & Drop Interface',
-        'Categories and Tags',
-        'Push Notifications',
-        'Offline-First with CoreData'
+        'Custom PyTorch Architecture',
+        'Built and Trained from Scratch',
+        'REST API for Model Serving',
+        'Image Upload Frontend'
       ]
     },
     {
@@ -94,7 +98,7 @@ const Projects = () => {
       image: '/images/projects/organ-control.jpg',
       color: 'from-purple-500 to-indigo-600',
       features: [
-        'Real-time Hardware Control',
+        'Hardware Control',
         'Embedded Webserver',
         'Physical Signal Processing',
         'Raspberry Pi Integration'
@@ -124,9 +128,9 @@ const Projects = () => {
       image: '/images/projects/java-erp.jpg',
       color: 'from-blue-600 to-indigo-700',
       features: [
-        'Secure Login System',
+        'Login System',
         'Automatic Stock Warnings',
-        'Time Tracking (Punch Clock)',
+        'Time Tracking',
         'Real-Time Inventory Overview'
       ]
     }

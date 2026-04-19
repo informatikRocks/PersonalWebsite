@@ -51,7 +51,7 @@ const Personal = () => {
                 Technical University of Munich
               </p>
               <p className="text-gray-300">
-                3rd Semester • Focus: Software Engineering & Data Science
+                4th Semester
               </p>
             </div>
           </div>
